@@ -7,14 +7,14 @@ import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
-@ComponentScan(basePackages = {"core"})
+@ComponentScan(basePackages = {"core"})//where to find core components
 public class ApplicationConfig {
     @Bean
-    public ViewResolver viewResolver(){
-        InternalResourceViewResolver viewResolver=
+    public ViewResolver viewResolver() {
+        InternalResourceViewResolver viewResolver =
                 new InternalResourceViewResolver();
-        viewResolver.setPrefix("/WEB-INF/views/");
-        viewResolver.setSuffix(".jsp");
+        viewResolver.setPrefix("/WEB-INF/views/");//folder for views
+        viewResolver.setSuffix(".jsp");//views format
         return viewResolver;
     }
 }

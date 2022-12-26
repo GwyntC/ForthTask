@@ -1,5 +1,6 @@
 package core.dto;
 
+//class for our User DataModel
 public class UserDto {
     private String login;
     private String password;

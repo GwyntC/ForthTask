@@ -1,52 +1,73 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
+    <title>Login Page</title>
     <style>
-        if{color: crimson;}
-        body{background-color: lightslategray;}
-        h2{ padding: 70px 0;
-            text-align: center;}
-        div.form
-        {
-            display: block;
-            text-align: center;
+        body{
+            background-color: aliceblue;
         }
-        form
-        {
-            display: inline-block;
-            margin-left: auto;
-            margin-right: auto;
-            text-align: left;
+        if{
+            font-size: 2vh;
+            font-family: "Times New Roman",serif;
+            color: crimson;
         }
-        input {
-            width: 375px;
-            height: 25px;
+        h2{
+            font-size: 10vh;
+            font-family: "Times New Roman",serif;
         }
+        .login-wrapper{
+            position: absolute;
+            width: 20%;
+            height: 40vh;
+            top: 50%;
+            left: 50%;
+            margin: -50px 0 0 -50px;
+        }
+        .login-form{
+          box-shadow: 10px 5px 20px lightslategray;
+        }
+        td{
+            font-size: 150%;
+        }
+        .login{
+            height: 3vh;
+            font-size: 2vh;
+        }
+        .password{
+            height: 3vh;
+            font-size: 2vh;
+        }
+        .button{
+            height: 3vh;
+            font-size: 2vh;
+            background-color: hotpink;
+        }
+        div{display: block;}
     </style>
 </head>
 <body>
-<div>
 <h2>LOGIN PAGE</h2>
-    <div class="form">
+    <div class="login-wrapper">
+        <div class="login-form">
 <form action="${pageContext.request.contextPath}/app/login/enter" method="post">
 <table>
     <tr>
         <td>Login:</td>
-        <td><input type="text" name="login"></td>
+        <td><input type="text" name="login" class="login"></td>
     </tr>
     <tr>
         <td>Password:</td>
-        <td><input type="text" name="password"></td>
+        <td><input type="password" name="password" class="password"></td>
     </tr>
     <tr>
-        <td><input type="submit" value="LOGIN"></td>
+        <td><input type="submit" value="LOGIN" class="button"></td>
     </tr>
 </table>
 </form>
+        </div>
+        <if test="${not empty error}">
+            ${error}
+        </if>
     </div>
-<if test="${not empty error}">
-    ${error}
-</if>
-</div>
 </body>
 </html>
